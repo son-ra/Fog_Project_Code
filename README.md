@@ -1,4 +1,7 @@
-# Fog_Project_Code
-!!!!WORK IN PROGRESS!!!! 
+### Folder Structure
 
-These files show the preliminary analysis for an unsupervised fog classification model for photos at Yaquina Head, OR. These photos are from ftp://cil-ftp.ceoas.oregonstate.edu.
+**Data Processing**: contains scripts for processing image data for the machine learning models  
+**Deep Learning Models**: script for a CNN and a CNN with edge detection  
+**Preliminary Analysis**: initial modeling on photos and spatial analysis of sites  
+**Run on Entire Dataset**: scripts to run the machine learning models on all saved photos  
+**Supervise and Unsupervised Methods**: testing of various machine learning methdods on the labeled dataset  
