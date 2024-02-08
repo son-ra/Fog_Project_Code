@@ -13,7 +13,7 @@ st.set_page_config(layout="wide")
 #####plotting functions
 def create_model_plot(dataset, x, y,title_name, yaxis_title, yaxis_tickformat, model_plot_scale_min, model_plot_scale_max,color_choice = 'skyblue'):
     point_space = np.linspace(model_plot_scale_min, model_plot_scale_max, 4)
-    model_options = ['Random Forest', 'Logistic Regression', 'Convolutional Neural Network', 'Manual Labels (~10% of photos)']
+    model_options = ['Random Forest', 'Logistic Regression', 'Convolutional Neural Network', 'Manual Labels (~30% of photos)']
     model_col_names = ['rf_pred', 'logit_pred', 'cnn_pred', 'Label_train']
     model_stagger = {key: value for key, value in zip(model_col_names, point_space)}
 
@@ -443,14 +443,16 @@ within the ranges in the table above that shows the seasonal collection dates fo
 st.plotly_chart(lineplot_daily_by_site, use_container_width=True)
 
 
-st.text("""The plots show the % of the time when there is fog at both camera locations. Please note that this co-occurence
+st.text("""Below are some plots showing trends in fog presence at the five camera locations.
+
+The fog co-occurence plots show the % of the time when there is fog at both camera locations. Please note that this co-occurence
 metric is not the same when comparing, for example Pacific City vs. Otter Rock and Otter Rock vs. Pacific City because the 
 denominator for Pacific City vs Otter Rock is the number of photos with fog present at Pacific City, whereas the denominator for 
 Otter Rock and Pacific City is the number of photos with fog present at Otter Rock, which will be different. The chart on the left 
 compares fog co-occurence for each half hour daytime period. The chart on the right shows the co-occurence by day, 
 regardless of the time of day that the fog occured. 
         
-Below these fog co-occurence charts are histograms of fog frequency by hour. The left shows frequency of the manually labeled 
+Below the fog co-occurence charts are histograms of fog frequency by hour. The left shows frequency of the manually labeled 
 photos and the right shows the fog frequency for the classified photos.        
 
 Note that the classification model and time periods for these charts will be the same 
@@ -478,11 +480,13 @@ with col4:
 
 st.plotly_chart(scatter_hourly_by_site, use_container_width=True)
 st.subheader(f"Fog Classifications for {selected_sites} and Weather Observations from Closest Automated Surface Observing System {station} Station")
-st.text("""The following charts compare the fog classification for all three models and manual labels to weather observations from nearby airports. 
-The charts of relative humidity and visibility can be used to validate the fog classification as relative humidity is directly related to fog, and 
-visibility is a more precise measurement of fog presence. However, note that the distance from nearest weather station to camera location varies 
-by site, and so the airport weather stations closer to the camera sites, like Agate Beach, will have a stronger relationship between weather observations
-and fog classificaiton. Please select the camera location and time period for these half hourly plots in the sidebar to the left.""")
+st.text("""The following charts compare the fog classification for all three models as well as the manual labels to weather observations from nearby airports. 
+Around 30% of photos have a manual label. The charts of relative humidity and visibility can be used to validate the fog classification as relative humidity 
+is directly related to fog, and visibility is a more precise measurement of fog presence. However, note that the distance from nearest weather station to 
+camera location varies by site, and so the airport weather stations closer to the camera sites, like Agate Beach, will have a stronger relationship between 
+weather observations and fog classificaiton. Also note that there is some missing data for weather observations, particularly for wind direction and speed.
+
+Please select the camera location and time period for these half hourly plots in the sidebar to the left.""")
 st.plotly_chart(relh_plot, use_container_width=True)
 st.plotly_chart(visibility_plot, use_container_width=True)
 st.plotly_chart(temperature_plot, use_container_width=True)
