@@ -43,3 +43,4 @@ tzlocal==5.2
 urllib3==2.2.0
 validators==0.22.0
 zipp==3.17.0
+seaborn==0.13.1
