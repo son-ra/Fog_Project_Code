@@ -89,7 +89,7 @@ profile_default/
 ipython_config.py
 
 ###data
-*.csv
+datasets/*.csv
 *.zip
 
 cnn_images/*
