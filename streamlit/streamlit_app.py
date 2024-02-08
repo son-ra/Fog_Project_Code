@@ -96,9 +96,9 @@ def create_summarized_heatmap(dataset, index, columns, values, title_name,colors
     return fig
 
 ###read in data and make the adjustments needed for plotting
-fog_results = pd.read_csv('streamlit_dataset.csv')
+fog_results = pd.read_csv('https://raw.githubusercontent.com/son-ra/Fog_Project_Code/main/streamlit/streamlit_dataset.csv')
 fog_results = fog_results.loc[fog_results['site']!= 'Beverly']
-asos = pd.read_csv('asos_oregon.csv')
+asos = pd.read_csv('https://raw.githubusercontent.com/son-ra/Fog_Project_Code/main/streamlit/asos_oregon.csv')
 
 ###date formatting
 fog_results['time_pst'] = pd.to_datetime(fog_results['time_pst'])
