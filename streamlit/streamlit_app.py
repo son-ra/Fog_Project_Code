@@ -2,14 +2,14 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import pydeck as pdk
-# import seaborn as sns
+import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
 import itertools
 from datetime import datetime
 
 st.set_page_config(layout="wide")
-
+st.markdown('<style>body{background-color: Black;}</style>',unsafe_allow_html=True)
 #####plotting functions
 def create_model_plot(dataset, x, y,title_name, yaxis_title, yaxis_tickformat, model_plot_scale_min, model_plot_scale_max,color_choice = 'skyblue'):
     point_space = np.linspace(model_plot_scale_min, model_plot_scale_max, 4)
@@ -348,21 +348,9 @@ plot_data = pd.concat([asos_loc, surfline_loc])
 # plot_data['Site Name'] = plot_data['Site Name'].astype(str)
 # Assign unique colors to unique 'Site Name' values
 site_names = plot_data['Site Name'].unique()
-# colors1 = sns.color_palette('winter', len(asos_loc)).as_hex()  # Using seaborn color palette
-# colors2 = sns.color_palette('autumn', len(surfline_loc)).as_hex()  # Using seaborn color palette
-# colors = colors1+colors2
-colors = ['#0024ed',
- '#0049db',
- '#006dc8',
- '#0092b6',
- '#00b6a4',
- '#00db92',
- '#ff2400',
- '#ff4900',
- '#ff6d00',
- '#ff9200',
- '#ffb600',
- '#ffdb00']
+colors1 = sns.color_palette('winter', len(asos_loc)).as_hex()  # Using seaborn color palette
+colors2 = sns.color_palette('autumn', len(surfline_loc)).as_hex()  # Using seaborn color palette
+colors = colors1+colors2
 color_map = dict(zip(site_names, colors))  # Create a mapping from 'Site Name' to color
 # # Now apply this mapping to the 'Site Name' column to create a new column for colors
 plot_data['color'] = plot_data['Site Name'].apply(lambda x: color_map[x])
