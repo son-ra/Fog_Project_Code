@@ -308,7 +308,7 @@ temperature_plot = create_model_plot(
     yaxis_tickformat='0',
     model_plot_scale_min=0,
     model_plot_scale_max=5
-  ,color_choice = 'lightyellow'
+  ,color_choice = 'yellowgreen'
 )
 
 wind_speed_plot = create_model_plot(
@@ -320,7 +320,7 @@ wind_speed_plot = create_model_plot(
     yaxis_tickformat='0',
     model_plot_scale_min=11,
     model_plot_scale_max=15
-  ,color_choice = 'lightyellow'
+  ,color_choice = 'yellowgreen'
 )
 
 wind_direction_plot = create_model_plot(
@@ -332,7 +332,7 @@ wind_direction_plot = create_model_plot(
     yaxis_tickformat='0',
     model_plot_scale_min=370,
     model_plot_scale_max=395
-  ,color_choice = 'lightyellow'
+  ,color_choice = 'yellowgreen'
 )
 
 asos_loc = asos[['station', 'lon', 'lat']].drop_duplicates()
