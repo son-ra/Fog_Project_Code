@@ -492,4 +492,6 @@ st.plotly_chart(visibility_plot, use_container_width=True)
 st.plotly_chart(temperature_plot, use_container_width=True)
 st.plotly_chart(wind_speed_plot, use_container_width=True)
 st.plotly_chart(wind_direction_plot, use_container_width=True)
-
+st.text("""This research was supported by Earth Science Information Partners as part of ESIP Lab Water and Wildfire Projects. 
+Coastal images were made available by Surfline.com, an online website monitoring surfing conditions around the globe.
+Please contact Sonya Rauschenbach at srauschenbach@ucdavis.edu for more information.""")
